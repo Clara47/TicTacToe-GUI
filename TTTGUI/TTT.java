@@ -7,10 +7,11 @@ class TTT {
    String symbol; //currentPlayerSymbol
    String [][] board = new String[ROWS][COLS]; 
    
-   TTT(){
-      symbol = "X"; 
+   public TTT(){
+      symbol = "O"; 
       board = initializeBoard();
    }
+   
    int getRows(){
       return(ROWS);}
    int getCols(){
@@ -31,9 +32,9 @@ class TTT {
       int row = position/COLS;
       int col = position%COLS; 
       board[row][col] = symbol;
-      if(!(isWinner() || isFull()))
+      if(!(isWinner() || isFull()));
       
-        // togglePlayer();  
+       togglePlayer();  
    } 
    
   // boolean validateInput(String input){
@@ -57,19 +58,20 @@ class TTT {
    String get(int r, int c){
       return(board[r][c]);} 
    
-  /*private void togglePlayer(){
+  private void togglePlayer(){
       if(symbol.equals("O"))
          symbol = "X";
       else
          symbol = "O"; 
-   }// toggle */
+   }// toggle 
    
    boolean isFull(){
-      for(int r = 0;r<ROWS;r++)
+   for(int r = 0;r<ROWS;r++)
          for(int c = 0; c<COLS;c++)
             if(board[r][c].equals(" "))
                return(false);
-      return(true);          
+      return(true);  
+
    }
     
    boolean isWinner(){
@@ -91,6 +93,7 @@ class TTT {
             return (true);
       } 
       return (false); 
+      
    }// iswinner
   
    
